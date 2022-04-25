@@ -1,4 +1,3 @@
-from email.utils import collapse_rfc2231_value
 from tkinter import *
 from cell import Cell
 import settings, utils
@@ -37,13 +36,13 @@ center_frame.place(
     y=utils.height_prct(25),
 )
 
-for x in range(5):
-    for y in range(5):
+for x in range(settings.GRID_SIZE):
+    for y in range(settings.GRID_SIZE):
         c = Cell()
         c.create_btn_object(center_frame)
         c.cell_btn_object.grid(
-            column=y, 
-            row=x
+            column=x, 
+            row=y
         )
 
 # run the window
